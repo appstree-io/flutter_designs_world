@@ -1,5 +1,5 @@
 # flutter_designs_world
 
-# Cenima Application Desing 
+# Cinema Application Design 
 
-![](/Cinema_app-screenMain.png) ![](/Cinema_app-ScreenDetail.png)
+![](/Cinema_app-ScreenShots/Cinema_app-ScreenMain.png)    ![](/Cinema_app-ScreenShots/Cinema_app-ScreenDetail.png)
