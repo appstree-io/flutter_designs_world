@@ -2,6 +2,6 @@
 
 # Cenima Application Desing 
 
-! [Screenshot](/screenMain.png)
+![](/screenMain.png)
 
-! [Alt text](/screenDetail.png)
+![](/ScreenDetail.png)
