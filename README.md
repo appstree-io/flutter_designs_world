@@ -2,6 +2,4 @@
 
 # Cenima Application Desing 
 
-![](/screenMain.png)
-
-![](/ScreenDetail.png)
+![](/screenMain.png) ![](/ScreenDetail.png)
