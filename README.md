@@ -2,4 +2,4 @@
 
 # Cenima Application Desing 
 
-![](/screenMain.png) ![](/ScreenDetail.png)
+![](/Cinema_app-screenMain.png) ![](/Cinema_app-ScreenDetail.png)
