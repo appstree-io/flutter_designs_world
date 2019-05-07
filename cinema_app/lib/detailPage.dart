@@ -234,23 +234,21 @@ class _DetailPageState extends State<DetailPage>
               clipper: tvClipper(),
               child: Container(
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: FractionalOffset.topCenter,
-                      end: FractionalOffset.bottomCenter,
-                      stops: [
-                        0.0,
-                        0.4,
-                        0.8
-                      ],
-                      colors: [
-                        Colors.grey[50],
-                        Colors.grey[100],
-                        Colors.grey[200],
+                    gradient: LinearGradient(
+                        begin: FractionalOffset.topCenter,
+                        end: FractionalOffset.bottomCenter,
+                        stops: [
+                      0.0,
+                      0.4,
+                      0.8
+                    ],
+                        colors: [
+                      Colors.grey[50],
+                      Colors.grey[100],
+                      Colors.grey[200],
 //                      Colors.grey[300],
 //                      Colors.grey[400],
-                      ]
-                  )
-                ),
+                    ])),
                 height: 90,
                 width: 370,
               ),
@@ -260,12 +258,10 @@ class _DetailPageState extends State<DetailPage>
             height: 5,
             width: 310,
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(50)
-            ),
+                color: Colors.deepPurple,
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(50)),
           )
-
         ],
       ),
     );
@@ -365,12 +361,12 @@ class _DetailPageState extends State<DetailPage>
                               controller: _tabController,
                               children: <Widget>[
                                 _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90"),
-                                _screenBuild("19", "11 30am", "14.90")
+                                _screenBuild("20", "11 30am", "14.90"),
+                                _screenBuild("21", "11 00am", "14.90"),
+                                _screenBuild("22", "11 00am", "14.90"),
+                                _screenBuild("23", "11 00am", "14.90"),
+                                _screenBuild("24", "11 30am", "14.90"),
+                                _screenBuild("25", "11 30am", "14.90")
                               ],
                             ),
                           ),
@@ -406,7 +402,7 @@ class _DetailPageState extends State<DetailPage>
   }
 }
 
-class tvClipper extends CustomClipper<Path>{
+class tvClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = new Path();
@@ -418,5 +414,4 @@ class tvClipper extends CustomClipper<Path>{
 
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-
 }
