@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "595835267173",
+    "firebase_url": "https://e-hostel-6d580.firebaseio.com",
+    "project_id": "e-hostel-6d580",
+    "storage_bucket": "e-hostel-6d580.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595835267173:android:d4ed5810d4efda1d",
+        "android_client_info": {
+          "package_name": "com.example.e_hostel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595835267173-6kggsl8s4q3moem00r485ns5e299n7s8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD60i-t5GjVlUrufPwkPNl_xPkWYjzWwhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595835267173-6kggsl8s4q3moem00r485ns5e299n7s8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "595835267173-n7vmn4281buuceh3mpls9hm5efi07cie.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.eHostel"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

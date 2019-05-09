@@ -25,6 +25,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   sliding_up_panel: ^0.3.4
   cupertino_range_slider: ^1.0.1
+  firebase_core: ^0.3.4
+  firebase_database: ^2.0.3
+  firebase_auth: ^0.8.0
+
 
 dev_dependencies:
   flutter_test:

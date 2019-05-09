@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'model/place.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:cupertino_range_slider/cupertino_range_slider.dart';
+import 'model/person.dart';
 
 class Search extends StatefulWidget {
+  final Person p;
+  Search(this.p);
   @override
   _SearchState createState() => _SearchState();
 }
@@ -218,6 +221,13 @@ class _SearchState extends State<Search> {
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23.0),
+                          ),
+                          Text(
+                            widget.p.getName(),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0),
                           ),
                           MaterialButton(
                               child: Text(

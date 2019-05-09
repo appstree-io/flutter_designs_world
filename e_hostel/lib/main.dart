@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'loginPage.dart';
 import 'signUp.dart';
 import 'search.dart';
+import 'model/person.dart';
 
 void main() {
   runApp(MyApp());
@@ -119,7 +120,7 @@ class MainPage extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Search()));
+                        MaterialPageRoute(builder: (context) => Search(Person("Guest", "guest@gmail.com", null, null))));
                   },
                 ),
               ),
