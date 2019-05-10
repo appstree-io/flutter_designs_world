@@ -3,10 +3,17 @@ import 'model/place.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:cupertino_range_slider/cupertino_range_slider.dart';
 import 'model/person.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'loginPage.dart';
 
 class Search extends StatefulWidget {
   final Person p;
-  Search(this.p);
+    final FirebaseUser user;
+  Search({this.p, this.user});
+
+//  Search(this.user);
+
+
   @override
   _SearchState createState() => _SearchState();
 }
@@ -192,6 +199,11 @@ class _SearchState extends State<Search> {
 
   @override
   Widget build(BuildContext context) {
+    Future <LoginPage> _signOut()  async{
+      await FirebaseAuth.instance.signOut().then((vo){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+      });
+    }
     queryData = MediaQuery.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -222,12 +234,17 @@ class _SearchState extends State<Search> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23.0),
                           ),
-                          Text(
-                            widget.p.getName(),
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0),
+                          GestureDetector(
+                            onTap: (){
+                              _signOut();
+                            },
+                            child: Text(
+                              widget.p.getName(),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                            ),
                           ),
                           MaterialButton(
                               child: Text(

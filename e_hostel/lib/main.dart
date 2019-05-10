@@ -3,22 +3,90 @@ import 'loginPage.dart';
 import 'signUp.dart';
 import 'search.dart';
 import 'model/person.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
+    Person p;
     return MaterialApp(
       title: "e-Hotel",
-      home: MainPage(),
+      home: new splashScreen(),
     );
   }
 }
 
-class MainPage extends StatelessWidget {
+class splashScreen extends StatefulWidget {
+  @override
+  _splashScreenState createState() => _splashScreenState();
+}
+
+FirebaseUser user;
+FirebaseAuth auth;
+String screen;
+final DatabaseReference databaseReference =
+    FirebaseDatabase.instance.reference().child("profiles");
+
+void _showError(BuildContext ctx, String error) {
+  final scaffold = Scaffold.of(ctx);
+  scaffold.showSnackBar(
+      SnackBar(content: Text(error), duration: Duration(seconds: 3)));
+}
+
+class _splashScreenState extends State<splashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    auth = FirebaseAuth.instance;
+    getCurrentUser();
+  }
+
+  getCurrentUser() async {
+    user = await auth.currentUser();
+    showDialog(context: context,
+        builder: (BuildContext context){
+          return
+            new Center(child:
+            CircularProgressIndicator()
+            );
+        }
+    );
+    Person person;
+    if (user != null) {
+      databaseReference.child(user.uid).once().then((DataSnapshot data) {
+        person = Person.fromSnapshot(data.value);
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => Search(p: person)));
+      }).catchError((error) {
+        _showError(context, error.toString());
+        print(error);
+      });
+    } else {
+        Future.delayed(new Duration(seconds: 3), (){
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => homePage()));
+        });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Container(
+      child: Center(
+        child: Image.asset("assets/splash.jpg", fit: BoxFit.cover,),
+      ),
+    );
+  }
+}
+
+class homePage extends StatelessWidget {
   MediaQueryData querydata;
 
   @override
@@ -119,8 +187,12 @@ class MainPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Search(Person("Guest", "guest@gmail.com", null, null))));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Search(
+                                p: Person(
+                                    "Guest", "guest@gmail.com", null, null))));
                   },
                 ),
               ),

@@ -28,12 +28,6 @@ class _SignUpState extends State<SignUp> {
   bool btnPressed = false;
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     query = MediaQuery.of(context);
     return Scaffold(
@@ -147,6 +141,11 @@ class _SignUpState extends State<SignUp> {
                         email.text.isNotEmpty &&
                         phoneNumber.text.isNotEmpty &&
                         password.text.isNotEmpty) {
+                      showDialog(context: context,
+                          builder: (BuildContext context){
+                            return Center(child: CircularProgressIndicator());
+                          }
+                      );
                       FirebaseUser user =
                           await firebaseAuth.createUserWithEmailAndPassword(
                               email: email.text, password: password.text).catchError((error){

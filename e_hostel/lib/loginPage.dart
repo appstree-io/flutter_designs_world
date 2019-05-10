@@ -100,7 +100,11 @@ class _LoginPageState extends State<LoginPage> {
                         btnPressed = true;
                       });
                       if (email.text.isNotEmpty && password.text.isNotEmpty) {
-                        const CircularProgressIndicator();
+                        showDialog(context: context,
+                            builder: (BuildContext context){
+                              return Center(child: CircularProgressIndicator());
+                            }
+                        );
                         FirebaseUser user = await firebaseAuth
                             .signInWithEmailAndPassword(
                                 email: email.text, password: password.text)
@@ -108,27 +112,25 @@ class _LoginPageState extends State<LoginPage> {
                           _showError(context, e.toString());
                           print(e.toString());
                         });
-                        if (user != null) {
+                        if (user != null ) {
                           Person person;
-                          databaseReference
-                              .orderByChild('email')
-                              .equalTo(email.text)
+                          databaseReference.child(user.uid)
                               .once()
                               .then((DataSnapshot data) {
                             print(data.value.values.toString());
-                            Map<dynamic, dynamic> map = data.value;
-                            map.forEach((k, v) {
-                              person = Person.fromSnapshot(v);
-                              print(person);
-                            });
+                            person = Person.fromSnapshot(data.value);
+//                            Map<dynamic, dynamic> map = data.value;
+//                            map.forEach((k, v) {
+//                              person = Person.fromSnapshot(v);
+//                            });
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Search(p: person, user: user,)));
                           }).catchError((error) {
                             _showError(context, error.toString());
                             print(error);
                           });
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Search(person)));
                         }
                       }
                     },
