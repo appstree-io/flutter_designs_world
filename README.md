@@ -6,4 +6,4 @@
 
 # E-Hostel Design
 
-![](/ScreenShots/e_hostel/e_hostel_Main.png)  ![](/ScreenShots/e_hostel/e_hostel_Home.png)  ![](/ScreenShots/e_hostel/e_hostel_Home2.png)  ![](/ScreenShots/e_hostel/e_hostel.gif)
+![](/ScreenShots/e_hostel/e_hostel_Main.png)  ![](/ScreenShots/e_hostel/e_hostel_Home.png)  ![](/ScreenShots/e_hostel/e_hostel_Home2.png)
