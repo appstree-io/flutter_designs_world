@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4318b152-ddbd-4686-bf5a-cbc17082a362" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/furniture_shopping_app" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_shopping_app" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" afterDir="false" />
-    </list>
+    <list default="true" id="4318b152-ddbd-4686-bf5a-cbc17082a362" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="206">
+              <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -51,12 +48,6 @@
               <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_designs_world" type="462c0819:PsiDirectoryNode" />
               <item name="furniture_shopping_app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_designs_world" type="462c0819:PsiDirectoryNode" />
-              <item name="furniture_shopping_app" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
@@ -193,8 +184,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="206">
+          <caret line="49" column="20" lean-forward="true" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
         </state>
       </provider>
     </entry>
