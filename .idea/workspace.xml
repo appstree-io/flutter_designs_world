@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4318b152-ddbd-4686-bf5a-cbc17082a362" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e_hostel/lib/search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/e_hostel/lib/search.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e_hostel/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/e_hostel/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,27 +22,41 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="219">
+              <caret line="334" column="25" lean-forward="true" selection-start-line="334" selection-start-column="25" selection-end-line="334" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/furniture_shopping_app/.gitignore">
+        <entry file="file://$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-709" />
+            <state relative-caret-position="375">
+              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/furniture_shopping_app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/furniture_shopping_app/lib/data_model/single_category_item.dart" />
+        <option value="$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml" />
         <option value="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" />
       </list>
     </option>
@@ -67,6 +88,12 @@
               <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_designs_world" type="462c0819:PsiDirectoryNode" />
               <item name="furniture_shopping_app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_designs_world" type="462c0819:PsiDirectoryNode" />
+              <item name="furniture_shopping_app" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -86,6 +113,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/furniture_shopping_app/assets" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -170,21 +202,24 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25201938" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25201938" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="Resources Explorer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" />
+      <window_info anchor="bottom" id="Find" weight="0.329927" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.2671533" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Debug" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.329927" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.329927" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" />
+      <window_info anchor="right" x="0" y="0" width="270" height="577" id="Documentation" side_tool="true" visible="true" weight="0.14216478" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
@@ -200,18 +235,54 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-709" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/data_model/single_category_item.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/basic.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="1536" column="18" lean-forward="true" selection-start-line="1536" selection-start-column="18" selection-end-line="1536" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/4.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="219">
+          <caret line="334" column="25" lean-forward="true" selection-start-line="334" selection-start-column="25" selection-end-line="334" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

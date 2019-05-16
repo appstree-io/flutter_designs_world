@@ -29,11 +29,11 @@ class _SearchState extends State<Search> {
   @override
   void initState() {
     super.initState();
-    listPlaces.add(Place("assets/places/1.jpeg", "Cottage", "65 Lac",
+    listPlaces.add(Place("assets/places/1.png", "Cottage", "65 Lac",
         "38HK-2400sqft-2bath", null));
-    listPlaces.add(Place("assets/places/1.jpeg", "Cottage", "65 Lac",
+    listPlaces.add(Place("assets/places/1.png", "Cottage", "65 Lac",
         "38HK-2400sqft-2bath", null));
-    listPlaces.add(Place("assets/places/1.jpeg", "Cottage", "65 Lac",
+    listPlaces.add(Place("assets/places/1.png", "Cottage", "65 Lac",
         "38HK-2400sqft-2bath", null));
 
     listBuilding.add(Place("assets/places/building1.jpg", "Hostel", "65 Lac",

@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:furniture_shopping_app/utils/rounded_clipper.dart';
 
+import 'data_model/single_category_item.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -41,7 +44,7 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title  = "fraz";
+  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -56,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: <Widget>[
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ClipPath(
                   child: Stack(
@@ -134,6 +138,22 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 _buildCategoriesList(context),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                    margin: EdgeInsets.only(left: 25),
+                    child: Text(
+                      "Spring Bestsellers",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontSize: 16),
+                    )),
+                SizedBox(
+                  height: 15,
+                ),
+                _buildBestSellersItemsUsingCarousel()
               ],
             ),
             Container(
@@ -178,27 +198,48 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  List<Color> colorsList = [
-    Colors.orange,
-    Colors.red,
-    Colors.pink,
-    Colors.indigo,
-    Colors.greenAccent
+  List<SingleCategoryItem> items = [
+    SingleCategoryItem(
+      "assets/5.png",
+      "Accent Chairs",
+      "${1500} items",
+      Colors.amber[100],
+    ),
+    SingleCategoryItem(
+      "assets/1.png",
+      "Living Room Furniture",
+      "${742} items",
+      Colors.pink[100],
+    ),
+    SingleCategoryItem(
+      "assets/3.png",
+      "Unfinished Furniture",
+      "${53} items",
+      Colors.lightGreen[100],
+    ),
+    SingleCategoryItem(
+      "assets/4.png",
+      "Office Furniture",
+      "${35} items",
+      Colors.cyan[100],
+    ),
+    SingleCategoryItem("assets/1.png", "Bed Room Furniture", "${40} items",
+        Colors.greenAccent[100]),
   ];
 
   @override
   Widget _buildCategoriesList(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(left: 20, top: 12, right: 20),
-        height: 110.0,
+        height: 165.0,
         child: CustomScrollView(
           scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
+          shrinkWrap: false,
           slivers: <Widget>[
             SliverFixedExtentList(
-              itemExtent: 110,
+              itemExtent: 115,
               delegate: SliverChildBuilderDelegate(
-                  (context, index) => BuildSingleOffersItem(context, index),
+                  (context, index) => _buildSingleCategoryItem(context, index),
                   childCount: 5),
             ),
           ],
@@ -206,35 +247,158 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  Widget BuildSingleOffersItem(BuildContext context, int index) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(index != 0 ? 5 : 0, 0, index != 4 ? 5 : 0, 5),
-      child: GestureDetector(
-        onTap: () {
-          print("Tapped");
-        },
-        child:
-//        Column(
-//          children: <Widget>[
-            Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    side: BorderSide(color: Colors.grey[300], width: 0.5)),
-                color: colorsList?.elementAt(index),
-                child: Row(
-//              alignment: Alignment.centerLeft,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(left: 10),
-                      width: 30,
-                      height: 30,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.purple[300]),
+  Widget _buildSingleCategoryItem(BuildContext context, int index) {
+    return Column(
+      children: <Widget>[
+        Container(
+          margin:
+              EdgeInsets.fromLTRB(index != 0 ? 5 : 0, 0, index != 4 ? 5 : 0, 5),
+//          height: 100,
+          child: GestureDetector(
+            onTap: () {
+              print("Tapped");
+            },
+            child: Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.grey[300], width: 0.5)),
+              color: items?.elementAt(index)?.color,
+              child: Container(
+                  height: 100,
+                  child: Center(
+                    child: Image.asset(
+                      items?.elementAt(index)?.imagePath,
+                      height: 75,
+                      width: 75,
                     ),
-                  ],
-                )),
-//          ],
-//        ),
+                  )),
+            ),
+          ),
+        ),
+        _buildSingleItemName(context, index),
+      ],
+    );
+  }
+
+  @override
+  Widget _buildSingleItemName(BuildContext context, int index) {
+    return Expanded(
+      child: Container(
+        margin:
+            EdgeInsets.fromLTRB(index != 0 ? 5 : 5, 0, index != 4 ? 5 : 5, 0),
+        padding: EdgeInsets.only(left: index != 0 ? 5 : 0, right: 5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              items?.elementAt(index)?.itemName,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.start,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+            Text(
+              items?.elementAt(index)?.itemQuantity,
+              style: TextStyle(fontWeight: FontWeight.w600, color: Colors.grey),
+              textAlign: TextAlign.start,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget _buildBestSellersItemsUsingCarousel() {
+    return Container(
+      margin: EdgeInsets.only(left: 20, right: 20),
+      height: 200,
+      child: Stack(
+        children: <Widget>[
+          CarouselSlider(
+            items: [1, 2, 3, 4, 5].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(color: Colors.amber),
+                      child: Text(
+                        'text $i',
+                        style: TextStyle(fontSize: 16.0),
+                      ));
+                },
+              );
+            }).toList(),
+            height: 200,
+            aspectRatio: 16 / 9,
+            viewportFraction: 1.0,
+            initialPage: 0,
+            enableInfiniteScroll: false,
+            reverse: false,
+            autoPlay: false,
+            enlargeCenterPage: true,
+            scrollDirection: Axis.horizontal,
+            onPageChanged: (int index) {
+              print(index);
+            },
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              margin: EdgeInsets.all(20),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
+                    ),
+                  ),
+                  SizedBox(width: 4,),
+                  Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
+                    ),
+                  ),
+                  SizedBox(width: 4,),
+                  Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
+
+
+                    ),
+                  ),
+                  SizedBox(width: 4,),
+                  Container(
+                    height: 15,
+                    width: 15,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
