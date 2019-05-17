@@ -5,6 +5,7 @@ import 'package:furniture_shopping_app/utils/rounded_clipper.dart';
 
 import 'data_model/single_category_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:furniture_shopping_app/activities/filters_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -55,144 +56,261 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        child: Stack(
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                ClipPath(
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        height: 125,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                              Colors.orange[500],
-                              Colors.orange[500],
-                              Colors.orange[600],
-                              Colors.orange[800],
-                              Colors.orange[800]
-                            ])),
-                      ),
-                      Positioned(
-                          top: -80,
-                          left: -80,
-                          child: Container(
-                            height: MediaQuery.of(context).size.height * 0.36,
-                            width: MediaQuery.of(context).size.height * 0.36,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                    (MediaQuery.of(context).size.height *
-                                            0.36) /
-                                        2),
-                                gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: [
-                                      Colors.deepOrange[700],
-                                      Colors.deepOrange[700],
-                                      Colors.deepOrange[400],
-                                      Colors.deepOrange[300],
-                                      Colors.deepOrange[300]
-                                    ])),
-                          )),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Container(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          margin: EdgeInsets.only(bottom: 15),
+          child: Stack(
+            children: <Widget>[
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ClipPath(
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
                           height: 125,
-                          width: MediaQuery.of(context).size.width,
-
-//                        child: CustomPaint(
-//                          painter: _ArcPainter(),
-//                        ),
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                Colors.orange[500],
+                                Colors.orange[500],
+                                Colors.orange[600],
+                                Colors.orange[800],
+                                Colors.orange[800]
+                              ])),
                         ),
-                      )
-                    ],
+                        Positioned(
+                            top: -80,
+                            left: -80,
+                            child: Container(
+                              height: MediaQuery.of(context).size.height * 0.36,
+                              width: MediaQuery.of(context).size.height * 0.36,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                      (MediaQuery.of(context).size.height *
+                                              0.36) /
+                                          2),
+                                  gradient: LinearGradient(
+                                      begin: Alignment.topLeft,
+                                      end: Alignment.bottomRight,
+                                      colors: [
+                                        Colors.deepOrange[700],
+                                        Colors.deepOrange[700],
+                                        Colors.deepOrange[400],
+                                        Colors.deepOrange[300],
+                                        Colors.deepOrange[300]
+                                      ])),
+                            )),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            height: 125,
+                            width: MediaQuery.of(context).size.width,
+                            child: CustomPaint(
+                              painter: _ArcPainter(),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                    clipper: RoundedClipper(30),
                   ),
-                  clipper: RoundedClipper(30),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Categories",
+                  Container(
+                    margin: EdgeInsets.only(top: 25, left: 20, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "Categories",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Text(
+                          "View all",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                  _buildCategoriesList(context),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "Spring Bestsellers",
                         style: TextStyle(
-                            color: Colors.black,
                             fontWeight: FontWeight.bold,
+                            color: Colors.black,
                             fontSize: 16),
-                      ),
-                      Text(
-                        "View all",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16),
-                      ),
-                    ],
+                      )),
+                  SizedBox(
+                    height: 25,
                   ),
-                ),
-                _buildCategoriesList(context),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                    margin: EdgeInsets.only(left: 25),
-                    child: Text(
-                      "Spring Bestsellers",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                          fontSize: 16),
-                    )),
-                SizedBox(
-                  height: 15,
-                ),
-                _buildBestSellersItemsUsingCarousel()
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 50, left: 20, right: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[Icon(Icons.menu), Icon(Icons.shopping_cart)],
+                  _buildBestSellersItemsUsingCarousel(),
+                  Container(
+                    margin: EdgeInsets.only(top: 25, left: 20, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "New Product",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                        Text(
+                          "View all",
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 25, left: 20, right: 20),
+                    width: double.infinity,
+                    height: 150,
+                    child: Stack(
+                      children: <Widget>[
+                        Container(
+                          width: double.infinity,
+                          height: 20,
+                        ),
+                        Container(
+                          height: 130,
+                          width: double.infinity,
+                          margin: EdgeInsets.only(top: 20),
+                          child: Card(
+                            color: Colors.white,
+                            elevation: 2.5,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5.0))),
+                            child: Container(
+                              width: double.infinity,
+                              margin: EdgeInsets.only(
+                                  top: 12, left: 125, right: 10, bottom: 10),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    "Alinium Chair",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  Text(
+                                    "Buy products related to lazy boy chair products and see what customers",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey[400]),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                  Text(
+                                    "\$870",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.grey[400]),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          color: Colors.grey[200],
+                          height: 150,
+                          width: 100,
+                          margin: EdgeInsets.only(left: 15, bottom: 10),
+                          child: Image.asset(
+                            "assets/10.png",
+                            width: 30,
+                            height: 30,
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 80, left: 35, right: 35),
-              height: 50,
-              width: double.infinity,
-              child: Card(
-                elevation: 3,
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
+              Container(
+                margin: EdgeInsets.only(top: 40, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Icon(
-                      Icons.search,
-                      color: Colors.grey[350],
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Search product",
-                      style: TextStyle(color: Colors.grey[350]),
+                    Icon(Icons.menu),
+                    Stack(
+                      children: <Widget>[
+                        Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle),
+                            child: Icon(Icons.shopping_cart)),
+                        Positioned(
+                          left: 18,
+                          child: Container(
+                            width: 15,
+                            height: 15,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.red
+                            ),
+                            child: Center(child: Text("2", style: TextStyle(color: Colors.white, fontSize: 12), )),
+                          ),
+                        )
+                      ],
                     )
                   ],
                 ),
               ),
-            )
-          ],
+              Container(
+                margin: EdgeInsets.only(top: 80, left: 35, right: 35),
+                height: 50,
+                width: double.infinity,
+                child: Card(
+                  elevation: 3,
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                  child: Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(
+                        Icons.search,
+                        color: Colors.grey[350],
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Search product",
+                        style: TextStyle(color: Colors.grey[350]),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -231,13 +349,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildCategoriesList(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(left: 20, top: 12, right: 20),
-        height: 165.0,
+        height: 175.0,
         child: CustomScrollView(
           scrollDirection: Axis.horizontal,
           shrinkWrap: false,
           slivers: <Widget>[
             SliverFixedExtentList(
-              itemExtent: 115,
+              itemExtent: 125,
               delegate: SliverChildBuilderDelegate(
                   (context, index) => _buildSingleCategoryItem(context, index),
                   childCount: 5),
@@ -253,10 +371,11 @@ class _MyHomePageState extends State<MyHomePage> {
         Container(
           margin:
               EdgeInsets.fromLTRB(index != 0 ? 5 : 0, 0, index != 4 ? 5 : 0, 5),
-//          height: 100,
           child: GestureDetector(
             onTap: () {
               print("Tapped");
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => FiltersScreen()));
             },
             child: Card(
               shape: RoundedRectangleBorder(
@@ -264,7 +383,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   side: BorderSide(color: Colors.grey[300], width: 0.5)),
               color: items?.elementAt(index)?.color,
               child: Container(
-                  height: 100,
+                  height: 110,
                   child: Center(
                     child: Image.asset(
                       items?.elementAt(index)?.imagePath,
@@ -314,141 +433,147 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  var _selectedIndex = 0;
+  List<Widget> images = [
+    Image.asset(
+      "assets/6.jpg",
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
+    Image.asset(
+      "assets/7.jpg",
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
+    Image.asset(
+      "assets/8.jpg",
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
+    Image.asset(
+      "assets/9.jpg",
+      fit: BoxFit.cover,
+      width: double.infinity,
+    ),
+  ];
+
   @override
   Widget _buildBestSellersItemsUsingCarousel() {
     return Container(
       margin: EdgeInsets.only(left: 20, right: 20),
-      height: 200,
-      child: Stack(
-        children: <Widget>[
-          CarouselSlider(
-            items: [1, 2, 3, 4, 5].map((i) {
-              return Builder(
-                builder: (BuildContext context) {
-                  return Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: EdgeInsets.symmetric(horizontal: 5.0),
-                      decoration: BoxDecoration(color: Colors.amber),
-                      child: Text(
-                        'text $i',
-                        style: TextStyle(fontSize: 16.0),
-                      ));
-                },
-              );
-            }).toList(),
-            height: 200,
-            aspectRatio: 16 / 9,
-            viewportFraction: 1.0,
-            initialPage: 0,
-            enableInfiniteScroll: false,
-            reverse: false,
-            autoPlay: false,
-            enlargeCenterPage: true,
-            scrollDirection: Axis.horizontal,
-            onPageChanged: (int index) {
-              print(index);
-            },
-          ),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Container(
-              margin: EdgeInsets.all(20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    height: 15,
-                    width: 15,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
-                    ),
-                  ),
-                  SizedBox(width: 4,),
-                  Container(
-                    height: 15,
-                    width: 15,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
-                    ),
-                  ),
-                  SizedBox(width: 4,),
-                  Container(
-                    height: 15,
-                    width: 15,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
-
-
-                    ),
-                  ),
-                  SizedBox(width: 4,),
-                  Container(
-                    height: 15,
-                    width: 15,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black, width: 1, style: BorderStyle.solid)
-                    ),
-                  )
-                ],
-              ),
+      height: 180,
+      width: double.infinity,
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        child: Stack(
+          children: <Widget>[
+            CarouselSlider(
+              items: images,
+              height: 180,
+              aspectRatio: 16 / 9,
+              viewportFraction: 1.0,
+              initialPage: 0,
+              enableInfiniteScroll: false,
+              reverse: false,
+              autoPlay: false,
+              enlargeCenterPage: false,
+              scrollDirection: Axis.horizontal,
+              onPageChanged: (int index) {
+                print(index);
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
             ),
-          )
-        ],
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                  margin: EdgeInsets.only(left: 20, top: 150),
+                  child: CustomScrollView(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: false,
+                    slivers: <Widget>[
+                      SliverFixedExtentList(
+                        itemExtent: 13,
+                        delegate: SliverChildBuilderDelegate(
+                            (c, index) => _buildSelectors(c, index),
+                            childCount: images?.length),
+                      ),
+                    ],
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
+
+  Widget _buildSelectors(BuildContext c, int index) {
+    return Container(
+        margin: EdgeInsets.all(2),
+        decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color:
+                _selectedIndex == index ? Colors.red : Colors.blueGrey[100]));
+  }
 }
 
-//class _ArcPainter extends CustomPainter {
-//  _ArcPainter();
-//
-//  @override
-//  bool shouldRepaint(_ArcPainter oldDelegate) {
-//    return true;
-//  }
-//
-//  double AVATAR_RADIUS = 160 * 0.28;
-//  @override
-//  void paint(Canvas canvas, Size size) {
-//    Paint paint = new Paint()
-//      ..style = PaintingStyle.fill
-//      ..isAntiAlias = true
-//      ..color = Colors.purple[700];
-//
-//    Offset circleCenter = Offset(size.width / 2, size.height - AVATAR_RADIUS);
-//
-//    Offset topLeft = Offset(0, 0);
-//    Offset bottomLeft = Offset(0, size.height * 0.25);
-//    Offset topRight = Offset(size.width, 0);
-//    Offset bottomRight = Offset(size.width, size.height * 0.5);
-//
-//    Offset leftCurveControlPoint = Offset(circleCenter.dx * 0.5, size.height - AVATAR_RADIUS * 1.5);
-//    Offset rightCurveControlPoint = Offset(circleCenter.dx * 1.6, size.height - AVATAR_RADIUS);
-//
-//    final arcStartAngle = 200 / 180 * pi;
-//    final avatarLeftPointX = circleCenter.dx + AVATAR_RADIUS * cos(arcStartAngle);
-//    final avatarLeftPointY = circleCenter.dy + AVATAR_RADIUS * sin(arcStartAngle);
-//    Offset avatarLeftPoint = Offset(avatarLeftPointX, avatarLeftPointY); // the left point of the arc
-//
-//    final arcEndAngle = -5 / 180 * pi;
-//    final avatarRightPointX = circleCenter.dx + AVATAR_RADIUS * cos(arcEndAngle);
-//    final avatarRightPointY = circleCenter.dy + AVATAR_RADIUS * sin(arcEndAngle);
-//    Offset avatarRightPoint = Offset(avatarRightPointX, avatarRightPointY); // the right point of the arc
-//
-//    Path path = Path()
-//      ..moveTo(topLeft.dx, topLeft.dy) // this move isn't required since the start point is (0,0)
-//      ..lineTo(bottomLeft.dx, bottomLeft.dy)
-//      ..quadraticBezierTo(leftCurveControlPoint.dx, leftCurveControlPoint.dy, avatarLeftPoint.dx, avatarLeftPoint.dy)
-//
-//      ..quadraticBezierTo(rightCurveControlPoint.dx, rightCurveControlPoint.dy, bottomRight.dx, bottomRight.dy)
-//      ..lineTo(topRight.dx, topRight.dy)
-//      ..close();
-//
-//    canvas.drawPath(path, paint);
-//  }
-//}
+class _ArcPainter extends CustomPainter {
+  _ArcPainter();
+
+  @override
+  bool shouldRepaint(_ArcPainter oldDelegate) {
+    return true;
+  }
+
+  double AVATAR_RADIUS = 160 * 0.35;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = new Paint()
+      ..style = PaintingStyle.fill
+      ..isAntiAlias = true
+      ..color = Colors.orangeAccent[400];
+
+    Offset circleCenter = Offset(size.width / 2, size.height - AVATAR_RADIUS);
+
+    Offset topLeft = Offset(0, 0);
+    Offset bottomLeft = Offset(0, size.height * 0.25);
+    Offset topRight = Offset(size.width, 0);
+    Offset bottomRight = Offset(size.width, size.height * 0.25);
+
+    Offset leftCurveControlPoint =
+        Offset(circleCenter.dx * 0.35, size.height - AVATAR_RADIUS * 1.5);
+    Offset rightCurveControlPoint =
+        Offset(circleCenter.dx * 1.6, size.height - AVATAR_RADIUS);
+
+    final arcStartAngle = 200 / 180 * pi;
+    final avatarLeftPointX =
+        circleCenter.dx + AVATAR_RADIUS * cos(arcStartAngle);
+    final avatarLeftPointY =
+        circleCenter.dy + AVATAR_RADIUS * sin(arcStartAngle);
+    Offset avatarLeftPoint =
+        Offset(avatarLeftPointX, avatarLeftPointY); // the left point of the arc
+
+    final arcEndAngle = -5 / 180 * pi;
+    final avatarRightPointX =
+        circleCenter.dx + AVATAR_RADIUS * cos(arcEndAngle);
+    final avatarRightPointY =
+        circleCenter.dy + AVATAR_RADIUS * sin(arcEndAngle);
+    Offset avatarRightPoint = Offset(
+        avatarRightPointX, avatarRightPointY); // the right point of the arc
+
+    Path path = Path()
+      ..moveTo(topLeft.dx,
+          topLeft.dy) // this move isn't required since the start point is (0,0)
+      ..lineTo(bottomLeft.dx, bottomLeft.dy)
+      ..quadraticBezierTo(leftCurveControlPoint.dx, leftCurveControlPoint.dy,
+          avatarLeftPoint.dx, avatarLeftPoint.dy)
+      ..quadraticBezierTo(rightCurveControlPoint.dx, rightCurveControlPoint.dy,
+          bottomRight.dx, bottomRight.dy)
+      ..lineTo(topRight.dx, topRight.dy)
+      ..close();
+
+    canvas.drawPath(path, paint);
+  }
+}

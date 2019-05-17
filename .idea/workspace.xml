@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4318b152-ddbd-4686-bf5a-cbc17082a362" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/furniture_shopping_app/assets/9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_hostel/lib/search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/e_hostel/lib/search.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_hostel/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/e_hostel/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +22,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/activities/filters_screen.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="205" column="59" lean-forward="true" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="334" column="25" lean-forward="true" selection-start-line="334" selection-start-column="25" selection-end-line="334" selection-end-column="25" />
+            <state relative-caret-position="175">
+              <caret line="261" column="35" lean-forward="true" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -34,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+            <state relative-caret-position="296">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -49,6 +63,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -58,6 +77,7 @@
         <option value="$PROJECT_DIR$/furniture_shopping_app/lib/data_model/single_category_item.dart" />
         <option value="$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml" />
         <option value="$PROJECT_DIR$/furniture_shopping_app/lib/main.dart" />
+        <option value="$PROJECT_DIR$/furniture_shopping_app/lib/activities/filters_screen.dart" />
       </list>
     </option>
   </component>
@@ -72,6 +92,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -88,7 +110,7 @@
               <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_designs_world" type="462c0819:PsiDirectoryNode" />
               <item name="furniture_shopping_app" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_designs_world" type="b2602c69:ProjectViewProjectNode" />
@@ -100,8 +122,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,6 +217,15 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
     <editor active="true" />
@@ -209,23 +238,23 @@
       <window_info id="Resources Explorer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.329927" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.2671533" />
-      <window_info anchor="bottom" id="TODO" order="1" />
-      <window_info anchor="bottom" id="Debug" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.30948904" />
+      <window_info anchor="bottom" id="TODO" order="1" weight="0.329927" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.28029197" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.21167883" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" />
-      <window_info anchor="right" x="0" y="0" width="270" height="577" id="Documentation" side_tool="true" visible="true" weight="0.14216478" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.329927" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.24817519" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info anchor="right" id="Fabric" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" x="0" y="0" width="270" height="577" id="Documentation" order="6" side_tool="true" visible="true" weight="0.14216478" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,25 +292,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/4.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/9.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/7.jpeg" />
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/8.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/7.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/6.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/assets/12.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/scroll_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="1421" column="11" selection-start-line="1421" selection-start-column="11" selection-end-line="1421" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../flutter/packages/flutter/lib/src/widgets/sliver.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="552" column="11" selection-start-line="552" selection-start-column="11" selection-end-line="552" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        <state relative-caret-position="296">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="334" column="25" lean-forward="true" selection-start-line="334" selection-start-column="25" selection-end-line="334" selection-end-column="25" />
+        <state relative-caret-position="175">
+          <caret line="261" column="35" lean-forward="true" selection-start-line="261" selection-start-column="35" selection-end-line="261" selection-end-column="35" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/furniture_shopping_app/lib/activities/filters_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="205" column="59" lean-forward="true" selection-start-line="205" selection-start-column="59" selection-end-line="205" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
