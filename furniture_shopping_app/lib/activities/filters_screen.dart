@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_range_slider/flutter_range_slider.dart';
+import 'package:furniture_shopping_app/activities/shopping_cart_screen.dart';
 
 class FiltersScreen extends StatefulWidget {
   @override
@@ -39,12 +40,17 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 textAlign: TextAlign.center,
               ),
             ),
-            Text(
-              "Done",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: Colors.blue),
+            GestureDetector(
+              child: Text(
+                "Done",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.blue),
+              ),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ShoppingCartScreen()));
+              },
             )
           ],
         ),
@@ -288,7 +294,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   ];
 
   int selectedBrand = -1;
-  Color defaultColor = Colors.red;
+  Color defaultColor = Colors.red[700];
   int selectedCategory = -1;
   int selectedColor = 0;
 
@@ -333,7 +339,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
   ];
 
   List<Color> colors = [
-    Colors.red,
+    Colors.red[700],
     Colors.orangeAccent,
     Colors.yellow,
     Colors.brown,
