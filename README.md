@@ -1,18 +1,26 @@
-# flutter_designs_world
+# Flutter Designs World
 
-# Cinema Application Design 
+<p align="center">
+  <img src="screenshots/preview.jpg" />
+</p>
 
-![](/ScreenShots/Cinema_app_Main.png)    ![](/ScreenShots/Cinema_app_detail.png)    ![](/ScreenShots/Cinema_app.gif)
+## Furniture Shopping App Design
 
-# E-Hostel Design
+Design concept taken from
+https://www.uplabs.com/posts/filters-shopping-cart-screens-for-furniture-app
 
-![](/ScreenShots/e_hostel/e_hostel_Main.png)  ![](/ScreenShots/e_hostel/e_hostel_Home.png)  ![](/ScreenShots/e_hostel/e_hostel_Home2.png)     ![](/ScreenShots/e_hostel/ScreenRecording.gif)
+|                                      |                                      |
+| ------------------------------------ | ------------------------------------ |
+| <img src="screenshots/furniture_shopping_app/home_screen.png"  width="300"/> | <img src="screenshots/furniture_shopping_app/filter_screen.png"  width="300"/> 
+| <img src="screenshots/furniture_shopping_app/shopping_cart_screen.png"  width="300"/> | <img align="center" src="screenshots/furniture_shopping_app/video.gif"  width="220"/> |
+## Cinema Application Design 
 
-# Furniture Shopping App Design
+![](screenshots/cinema_app/cinema_app_main.png)    ![](screenshots/cinema_app/cinema_app_detail.png)  <img src="screenshots/cinema_app/cinema_app.gif"  width="215"/>
 
-# Design concept taken from https://www.uplabs.com/posts/filters-shopping-cart-screens-for-furniture-app
+## E-Hostel Design
 
-![](/ScreenShots/furniture_shopping_app/home_screen.png)
-![](/ScreenShots/furniture_shopping_app/filter_screen.png)
-![](/ScreenShots/furniture_shopping_app/shopping_cart_screen.png)
-![](/ScreenShots/furniture_shopping_app/video.gif)
+|                                      |                                      |
+| ------------------------------------ | ------------------------------------ |
+| <img src="screenshots/e_hostel/e_hostel_Main.png"  width="300"/> | <img src="screenshots/e_hostel/e_hostel_Home.png"  width="300"/> 
+| <img src="screenshots/e_hostel/e_hostel_Home2.png"  width="300"/> | <img align="center" src="screenshots/e_hostel/ScreenRecording.gif"  width="300"/> |
+
